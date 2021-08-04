@@ -5,6 +5,37 @@ Checks azure apps health.
 
 `VERSION  <azure_web_app_health_check/VERSION>`__
 
+Plugins input URL and key.
+URL example: https://domainname.net/
+
+The plugin will automatically add this to the url:
+
+https://domainname.net/healthy?key=keyname
+
+plugin expects return from webapp:
+
+´´´json
+{
+  "status": "Healthy",
+  "totalDuration": "00:00:02.9700420",
+  "entries": {
+    "process_health_check": {
+      "data": {},
+      "description": "Process health check was successful.",
+      "duration": "00:00:02.9326800",
+      "status": "Healthy"
+    }
+  }
+}
+´´´
+
+Plugin will check the .status key is "Healthy" to return OK if not "CRITICAL".
+
+Plugin will also output msg with .entries.description.
+
+TODO:
+plugin performance data: .totalDuration
+
 Install
 =======
 
