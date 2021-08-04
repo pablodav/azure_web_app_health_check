@@ -72,8 +72,4 @@ Example service::
 
 You can use ansible role that already has the installation and command: https://github.com/CoffeeITWorks/ansible_nagios4_server_plugins
 
-TODO
-====
 
-* Use hash passwords
-* Add Unit tests?
