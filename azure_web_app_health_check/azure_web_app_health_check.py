@@ -29,9 +29,8 @@ class AzureAppHealthChecks:
 
         # requests doc http://docs.python-requests.org/en/v0.10.7/user/quickstart/#custom-headers
         
-
-        url = url + "/health?key=" + key
-        
+        #Add key to URL
+        url = url + "/health?key=" + key        
 
         r = requests.get(url=url, verify=False)
         
@@ -41,8 +40,7 @@ class AzureAppHealthChecks:
 
         #Vars
         retrcode = OK
-		#retrcodetag = OK
-
+		
         #Create tuple with json and status code
         azure_health_status = self.get_status_data()
         
@@ -59,6 +57,6 @@ class AzureAppHealthChecks:
                 msgerror += 'ERROR - Check your App Health'
 
         msgerror += msgdata
-        
- 
+         
         return retrcode, msgerror
+        

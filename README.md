@@ -57,7 +57,7 @@ Example command::
 
     define command{
         command_name  azure_web_app_health_check
-        command_line  /usr/local/bin/azure_web_app_health_check -u "$ARG1$" --key "$ARG2$" --extra_args='$ARG6$'
+        command_line  /usr/local/bin/azure_web_app_health_check -u "$ARG1$" -k "$ARG2$" --extra_args='$ARG6$'
     }
 
 Example service::
